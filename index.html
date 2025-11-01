@@ -1,70 +1,209 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ العنوان القصير -->
-<title>Arduino Projects | Talel Dhouaya</title>
+  <!-- ✅ العنوان -->
+  <title>Arduino Projects | Talel Dhouaya</title>
 
-<!-- ✅ Google Analytics Tracking -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PK5ZM8FKWL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PK5ZM8FKWL');
-</script>
+  <!-- ✅ Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK5ZM8FKWL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PK5ZM8FKWL');
+  </script>
 
-<!-- ✅ تحسين SEO -->
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="description" content="مشروع Arduino ينبه عند اقتراب جسم باستخدام حساس Ultrasonic وسماعة وLED. أكواد جاهزة بالعربية والإنجليزية.">
-<meta name="keywords" content="Arduino Projects, Arduino code, مشاريع أردوينو, Ultrasonic sensor, LED, Talel Dhouaya">
-<meta name="author" content="Talel Dhouaya">
+  <!-- ✅ تحسين SEO -->
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow">
+  <meta name="description" content="مجموعة مشاريع Arduino مجانية مع الأكواد والشرح بالعربية والإنجليزية من إعداد Talel Dhouaya.">
+  <meta name="keywords" content="Arduino Projects, Arduino Code, مشاريع أردوينو, Talel Dhouaya, Arduino Examples">
+  <meta name="author" content="Talel Dhouaya">
 
-<!-- ✅ Open Graph / Facebook / Google -->
-<meta property="og:title" content="Arduino Projects | Talel Dhouaya">
-<meta property="og:description" content="مشروع Arduino ينبه عند اقتراب جسم باستخدام حساس Ultrasonic وسماعة وLED. أكواد جاهزة بالعربية والإنجليزية.">
-<meta property="og:url" content="https://tdhouaya-ui.github.io/project00/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://tdhouaya-ui.github.io/project00/Talel.png?v=3">
+  <!-- ✅ OG tags -->
+  <meta property="og:title" content="Arduino Projects | Talel Dhouaya">
+  <meta property="og:description" content="مشاريع Arduino مع الأكواد الجاهزة بالعربية والإنجليزية.">
+  <meta property="og:url" content="https://tdhouaya-ui.github.io/project00/">
+  <meta property="og:image" content="https://tdhouaya-ui.github.io/project00/Talel.png">
 
-<!-- ✅ Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Arduino Projects | Talel Dhouaya">
-<meta name="twitter:description" content="Explore Arduino projects with clear codes and explanations in Arabic and English.">
-<meta name="twitter:image" content="https://tdhouaya-ui.github.io/project00/Talel.png?v=3">
+  <!-- ✅ أيقونة الموقع (favicon) -->
+  <link rel="icon" type="image/png" href="Talel.png?v=2">
 
-<!-- ✅ Site Verification -->
-<meta name="google-site-verification" content="LyF4cXHDRQokldquQCHIUCOS7Ti5hvT8PXPEHvFAmzk" />
+  <!-- ✅ تحسين سرعة ظهور الصورة في Google -->
+  <link rel="preload" as="image" href="Talel.png">
 
-<!-- ✅ Schema.org structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Talel Dhouaya",
-  "url": "https://tdhouaya-ui.github.io/project00/",
-  "logo": "https://tdhouaya-ui.github.io/project00/Talel.png",
-  "sameAs": [
-    "https://github.com/tdhouaya-ui"
-  ]
-}
-</script>
+  <!-- ✅ التحقق من Google -->
+  <meta name="google-site-verification" content="LyF4cXHDRQokldquQCHIUCOS7Ti5hvT8PXPEHvFAmzk" />
 
-<!-- ✅ Favicon -->
-<link rel="icon" type="image/png" href="Talel.png?v=3">
+  <!-- ✅ Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Talel Dhouaya Arduino Projects",
+    "url": "https://tdhouaya-ui.github.io/project00/",
+    "logo": "https://tdhouaya-ui.github.io/project00/Talel.png",
+    "sameAs": [
+      "https://github.com/tdhouaya-ui"
+    ]
+  }
+  </script>
 
-<style>
-  body { font-family: "Cairo", Arial, sans-serif; background: #f0f4f8; padding: 20px; }
-  h1 { text-align:center; color:#222; }
-  .project { background:#fff; padding:15px; border-radius:10px; margin:15px 0; box-shadow:0 3px 10px rgba(0,0,0,0.2);}
-  pre { background:#222; color:#0f0; padding:10px; border-radius:8px; overflow-x:auto; direction:ltr; }
-  .en { background:#f1f8e9; padding:10px; border-left:5px solid #43a047; margin-top:10px; border-radius:5px; }
-  textarea, input { width:100%; margin-top:10px; padding:8px; border-radius:5px; border:1px solid #ccc; }
-  button { width:100%; padding:10px; margin-top:10px; border:none; border-radius:5px; background:#43a047; color:white; font-weight:bold; cursor:pointer; }
-  button:hover { background:#2e7d32; }
-  .copy-btn { margin-top:5px; background:#0277bd; color:white; padding:5px 10px; border:none; border-radius:5px; cursor:pointer; }
-  .copy-btn:hover { background:#01579b; }
-</style>
+  <style>
+    body {
+      font-family: "Cairo", Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    h1 { text-align: center; color: #222; }
+    .project {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+    pre {
+      background: #222;
+      color: #0f0;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+      direction: ltr;
+    }
+    .en {
+      background: #f1f8e9;
+      padding: 10px;
+      border-left: 5px solid #43a047;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    textarea, input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #43a047;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #2e7d32; }
+    .copy-btn {
+      margin-top: 5px;
+      background: #0277bd;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .copy-btn:hover { background: #01579b; }
+  </style>
 </head>
+
+<body>
+
+  <!-- ✅ صورة الشعار -->
+  <div style="text-align:center; margin-bottom:20px;">
+    <img src="Talel.png" alt="Arduino Projects Logo by Talel Dhouaya" width="200" height="200">
+  </div>
+
+  <h1>💡 Arduino Projects | Talel Dhouaya 💡</h1>
+
+  <div>
+    <input type="text" id="titleAr" placeholder="عنوان المشروع بالعربية">
+    <input type="text" id="titleEn" placeholder="Project Title in English">
+    <textarea id="code" placeholder="اكتب كود Arduino هنا"></textarea>
+    <button onclick="addProject()">إضافة مشروع جديد | Add Project</button>
+  </div>
+
+  <div id="projectsContainer"></div>
+
+  <script>
+    let initialProjects = [
+      {
+        titleAr: "تستخدم حساس Ultrasonic وسيرفو لتجنب العوائق.",
+        titleEn: "This project uses an Ultrasonic sensor and Servo motor to avoid obstacles.",
+        code: `#include <Servo.h>
+Servo myServo;
+void setup() { myServo.attach(9); }
+void loop() {
+  myServo.write(90);
+  delay(200);
+  myServo.write(0);
+  delay(200);
+}`
+      },
+      {
+        titleAr: "يشتعل الـLED عند سماع صوت عالي من الميكروفون.",
+        titleEn: "The LED lights up when the microphone detects a loud sound.",
+        code: `int mic = A0;
+int led = 7;
+void setup() { pinMode(led, OUTPUT); }
+void loop() {
+  int sound = analogRead(mic);
+  if (sound > 500) digitalWrite(led, HIGH);
+  else digitalWrite(led, LOW);
+}`
+      }
+    ];
+
+    let savedProjects = JSON.parse(localStorage.getItem('projects')) || initialProjects;
+    savedProjects.forEach(p => displayProject(p));
+    localStorage.setItem('projects', JSON.stringify(savedProjects));
+
+    function addProject() {
+      let titleAr = document.getElementById('titleAr').value.trim();
+      let titleEn = document.getElementById('titleEn').value.trim();
+      let code = document.getElementById('code').value.trim();
+      if(!code) { alert("الرجاء كتابة الكود"); return; }
+
+      let project = { titleAr, titleEn, code };
+      displayProject(project);
+
+      let savedProjects = JSON.parse(localStorage.getItem('projects')) || [];
+      savedProjects.push(project);
+      localStorage.setItem('projects', JSON.stringify(savedProjects));
+
+      document.getElementById('titleAr').value='';
+      document.getElementById('titleEn').value='';
+      document.getElementById('code').value='';
+    }
+
+    function displayProject(p) {
+      let container = document.getElementById('projectsContainer');
+      let div = document.createElement('div');
+      div.className = 'project';
+      div.innerHTML = `
+        ${p.titleAr ? `<p>${p.titleAr}</p>` : ''}
+        ${p.titleEn ? `<div class="en"><strong>English:</strong> ${p.titleEn}</div>` : ''}
+        <pre><code id="codeBlock">${p.code}</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+      `;
+      container.appendChild(div);
+    }
+
+    function copyCode(btn) {
+      let code = btn.previousElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerText = 'Copied!';
+        setTimeout(()=>{ btn.innerText = 'Copy Code'; }, 1500);
+      });
+    }
+  </script>
+
+</body>
+</html>
