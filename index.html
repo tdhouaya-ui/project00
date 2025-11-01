@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ✅ العنوان القصير -->
-<title>Arduino Projects</title>
+<title>Arduino Projects | Talel Dhouaya</title>
 
 <!-- ✅ Google Analytics Tracking -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PK5ZM8FKWL"></script>
@@ -19,34 +18,42 @@
 <!-- ✅ تحسين SEO -->
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow">
-
-<!-- ✅ وصف ميتا محدد للمشروع -->
 <meta name="description" content="مشروع Arduino ينبه عند اقتراب جسم باستخدام حساس Ultrasonic وسماعة وLED. أكواد جاهزة بالعربية والإنجليزية.">
-
 <meta name="keywords" content="Arduino Projects, Arduino code, مشاريع أردوينو, Ultrasonic sensor, LED, Talel Dhouaya">
 <meta name="author" content="Talel Dhouaya">
 
+<!-- ✅ Open Graph / Facebook / Google -->
 <meta property="og:title" content="Arduino Projects | Talel Dhouaya">
 <meta property="og:description" content="مشروع Arduino ينبه عند اقتراب جسم باستخدام حساس Ultrasonic وسماعة وLED. أكواد جاهزة بالعربية والإنجليزية.">
 <meta property="og:url" content="https://tdhouaya-ui.github.io/project00/">
-<meta property="og:image" content="https://tdhouaya-ui.github.io/project00/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tdhouaya-ui.github.io/project00/Talel.png?v=3">
 
-<link rel="icon" type="image/png" href="logo.png">
+<!-- ✅ Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arduino Projects | Talel Dhouaya">
+<meta name="twitter:description" content="Explore Arduino projects with clear codes and explanations in Arabic and English.">
+<meta name="twitter:image" content="https://tdhouaya-ui.github.io/project00/Talel.png?v=3">
 
-<!-- Google Site Verification -->
+<!-- ✅ Site Verification -->
 <meta name="google-site-verification" content="LyF4cXHDRQokldquQCHIUCOS7Ti5hvT8PXPEHvFAmzk" />
 
-<!-- ✅ بيانات الصورة (Schema) -->
+<!-- ✅ Schema.org structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ImageObject",
-  "contentUrl": "https://tdhouaya-ui.github.io/project00/logo.png",
-  "name": "Arduino Projects Logo",
-  "description": "Logo for Arduino projects page by Talel Dhouaya",
-  "author": "Talel Dhouaya"
+  "@type": "Organization",
+  "name": "Talel Dhouaya",
+  "url": "https://tdhouaya-ui.github.io/project00/",
+  "logo": "https://tdhouaya-ui.github.io/project00/Talel.png",
+  "sameAs": [
+    "https://github.com/tdhouaya-ui"
+  ]
 }
 </script>
+
+<!-- ✅ Favicon -->
+<link rel="icon" type="image/png" href="Talel.png?v=3">
 
 <style>
   body { font-family: "Cairo", Arial, sans-serif; background: #f0f4f8; padding: 20px; }
@@ -61,96 +68,3 @@
   .copy-btn:hover { background:#01579b; }
 </style>
 </head>
-
-<body>
-
-<div style="text-align:center; margin-bottom:20px;">
-  <img src="logo.png" alt="Arduino projects logo" width="200">
-</div>
-
-<h1>Arduino Projects</h1>
-
-<div>
-  <input type="text" id="titleAr" placeholder="عنوان المشروع بالعربية">
-  <input type="text" id="titleEn" placeholder="Project Title in English">
-  <textarea id="code" placeholder="اكتب كود Arduino هنا"></textarea>
-  <button onclick="addProject()">إضافة مشروع جديد | Add Project</button>
-</div>
-
-<div id="projectsContainer"></div>
-
-<script>
-  let initialProjects = [
-    {
-      titleAr: "تستخدم حساس Ultrasonic وسيرفو لتجنب العوائق.",
-      titleEn: "This project uses an Ultrasonic sensor and Servo motor to avoid obstacles.",
-      code: `#include <Servo.h>
-Servo myServo;
-void setup() { myServo.attach(9); }
-void loop() {
-  myServo.write(90);
-  delay(200);
-  myServo.write(0);
-  delay(200);
-}`
-    },
-    {
-      titleAr: "يشتعل الـLED عند سماع صوت عالي من الميكروفون.",
-      titleEn: "The LED lights up when the microphone detects a loud sound.",
-      code: `int mic = A0;
-int led = 7;
-void setup() { pinMode(led, OUTPUT); }
-void loop() {
-  int sound = analogRead(mic);
-  if (sound > 500) digitalWrite(led, HIGH);
-  else digitalWrite(led, LOW);
-}`
-    }
-  ];
-
-  let savedProjects = JSON.parse(localStorage.getItem('projects')) || initialProjects;
-  savedProjects.forEach(p => displayProject(p));
-  localStorage.setItem('projects', JSON.stringify(savedProjects));
-
-  function addProject() {
-    let titleAr = document.getElementById('titleAr').value.trim();
-    let titleEn = document.getElementById('titleEn').value.trim();
-    let code = document.getElementById('code').value.trim();
-    if(!code) { alert("الرجاء كتابة الكود"); return; }
-
-    let project = { titleAr, titleEn, code };
-    displayProject(project);
-
-    let savedProjects = JSON.parse(localStorage.getItem('projects')) || [];
-    savedProjects.push(project);
-    localStorage.setItem('projects', JSON.stringify(savedProjects));
-
-    document.getElementById('titleAr').value='';
-    document.getElementById('titleEn').value='';
-    document.getElementById('code').value='';
-  }
-
-  function displayProject(p) {
-    let container = document.getElementById('projectsContainer');
-    let div = document.createElement('div');
-    div.className = 'project';
-    div.innerHTML = `
-      ${p.titleAr ? `<p>${p.titleAr}</p>` : ''}
-      ${p.titleEn ? `<div class="en"><strong>English:</strong> ${p.titleEn}</div>` : ''}
-      <pre><code id="codeBlock">${p.code}</code></pre>
-      <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
-    `;
-    container.appendChild(div);
-  }
-
-  function copyCode(btn) {
-    let code = btn.previousElementSibling.innerText;
-    navigator.clipboard.writeText(code).then(() => {
-      btn.innerText = 'Copied!';
-      setTimeout(()=>{ btn.innerText = 'Copy Code'; }, 1500);
-    });
-  }
-</script>
-
-</body>
-</html>
